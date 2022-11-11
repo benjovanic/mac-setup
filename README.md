@@ -3,14 +3,26 @@
 ## Install Homebrew
 
 ```
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo "# Homebrew\nexport PATH=/opt/homebrew/bin:\$PATH" >> .zshrc
+source ~/.zshrc
 ```
 
-## Install apps
+## Install maven
 
 ```
-brew install nvm maven
-brew cask install iterm2
+brew install maven
+```
+
+# Install nvm
+
+```
+brew update
+brew install nvm
+mkdir ~/.nvm
+
+echo "export NVM_DIR=~/.nvm\nsource \$(brew --prefix nvm)/nvm.sh" >> .zshrc
+source ~/.zshrc
 ```
 
 # zsh setup
@@ -24,17 +36,12 @@ brew install zsh
 ## Install oh my zsh
 
 ```
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 ## Install theme for iTerm2
 
-```
-cd Downloads
-curl -O https://raw.githubusercontent.com/MartinSeeler/iterm2-material-design/master/material-design-colors.itermcolors
-```
-
-> Go to iTerm2 > Preferences > Profiles > Colors Tab
+https://github.com/MartinSeeler/iterm2-material-design
 
 # GPG setup
 
